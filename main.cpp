@@ -17,7 +17,7 @@ void setp(int x = 0, int y = 0)
 	SetConsoleCursorPosition(hStdOut, myCoords);
 }
 
-// Shows menu, proposes player to choose something and returns its index
+// Show menu, propose player to choose something and return its index
 int menu(char* choices[], int length, int x = 5, int y = 5)
 {
     int choice = 0, oldchoice, button;
@@ -1381,17 +1381,17 @@ int main()
 {
     srand(time(NULL));
 
-    char* menu_choises[] = {"Singleplayer", "Local multiplayer", "Exit"};
+    char* menu_choices[] = {"Singleplayer", "Local multiplayer", "Exit"};
     const unsigned int menu_len = 3;
-    int choised;
+    int choice;
 
     setc();
     system("cls");
-    choised = menu(menu_choises, menu_len);
+    choice = menu(menu_choices, menu_len);
     setc();
     system("cls");
 
-    switch (choised)
+    switch (choice)
     {
     case 0:
         gameBot();
@@ -1407,7 +1407,7 @@ int main()
         break;
     }
 
-    delete[] menu_choises;
+    delete[] menu_choices;
 
     system("pause>>NULL");
 }
